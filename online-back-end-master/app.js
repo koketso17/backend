@@ -18,12 +18,16 @@ app.use(function (req, res, next) {
 // api routes
 
  app.use('/', require('./routes/admin'));
+ app.use('/', require('./routes/index'));
  app.use('/', require('./routes/order_product'));
  app.use('/', require('./routes/product'));
  app.use('/', require('./routes/reg_buyer'));
  app.use('/', require('./routes/seller_profile'));
+ app.use('/', require('./routes/buyer_profile'));
  app.use('/', require('./routes/reg_seller'));
-
+ app.use('/', require('./routes/update_seller_profile'));
+ app.use('/', require('./routes/update_buyer_profile'));
+ app.use('/', require('./routes/update_product'));
 
 // start server
 const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 5000;

@@ -48,5 +48,4 @@ router.post('/reg_seller', function(req, res){
 });
 
 
-
 module.exports = router ;
