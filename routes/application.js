@@ -3,17 +3,20 @@ const router = express.Router();
 const mysql = require('mysql');
 const  db = require('../conn/conn');
 
-//register student 
+//Application 
 
-        router.post('/register', function(req, res){  
+        router.post('/application', function(req, res){  
             var post = {
                 
 
-                "first_name" : req.body.first_name,
-                "last_name" : req.body.last_name,
-                "phone_no" : req.body.phone_no,
-                "email" : req.body.email,
-                "password" : req.body.password
+                "fullname": req.body.fullname, 
+                "email": req.body.email,
+                "mobileno": req.body.mobileno, 
+                "specialization": req.body.specialization,
+                "idno": req.body.idno, 
+                "gender": req.body.gender, 
+                "age": req.body.age, 
+                "proglanguages":  req.body.proglanguages
 
         
             };
@@ -25,7 +28,7 @@ const  db = require('../conn/conn');
                 })
             }
         
-            var myQuery = "INSERT INTO register SET ?";
+            var myQuery = "INSERT INTO applicantinfo SET ?";
             db.query(myQuery, [post], function(err, results, fields){
                 if(err){
                     
@@ -36,7 +39,7 @@ const  db = require('../conn/conn');
                     }); 
                 }else{
                     var email = req.body.email
-                    db.query('select * from register where email = ?',email, function(err, results, fields){
+                    db.query('select * from applicantinfo where email = ?',email, function(err, results, fields){
                         
                  
                     return res.send(results)

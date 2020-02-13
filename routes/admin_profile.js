@@ -1,3 +1,4 @@
+
 const express = require('express');
 const mysql = require('mysql');
 const router = express.Router();
@@ -5,14 +6,14 @@ const db = require('../conn/conn')
 
 //get student profile
 
-router.get('/student_profile', function(req, res){
+router.get('/admin_profile', function(req, res){
 
-    const email = req.body.email;
+    const username = req.body.username;
 
-    var myQuery = "SELECT * FROM register WHERE email = ?";
+    var myQuery = "SELECT * FROM admin_reg WHERE username = ?";
     
 
-    db.query (myQuery, [email], function(err, results){
+    db.query (myQuery, [username], function(err, results){
         if(err){
             
             res.send({
