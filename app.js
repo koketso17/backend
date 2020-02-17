@@ -25,7 +25,9 @@ app.use(function (req, res, next) {
  app.use('/', require('./routes/application'));
  app.use('/', require('./routes/admin_profile'));
  app.use('/', require('./routes/update_admin_profile'));
- 
+ app.use('/', require('./routes/upload_file'));
+ app.use('/', require('./routes/appl_login'));
+ app.use('/', require('./routes/admin_login'));
 
 // start server
 const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 5000;
