@@ -20,17 +20,11 @@ router.get('/n',function(req,res){
          
           if(results.length >0){
             if(results[0].password == password){
-                res.send({
-                    "success":"Email and password does not match"
-                });
-                var email = req.body.email;
+                
+                var username = req.body.username
                 db.query('select * from register where email = ?',email, function(err, results, fields){  
                     return res.send(results)
-                   
-
                 })
-
-
             }
             else{
               res.send({
@@ -42,7 +36,7 @@ router.get('/n',function(req,res){
           else{
             res.send({
               "code":204,
-              "success":"Email does not exits"
+              "success":"Email does not exist"
                 });
           }
         }

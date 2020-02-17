@@ -24,13 +24,7 @@ router.get('/n',function(req,res){
                 var username = req.body.username
                 db.query('select * from admin_reg where username = ?',username, function(err, results, fields){  
                     return res.send(results)
-                    res.send({
-                        "success":"Username and password does not match"
-                    });
-
                 })
-
-
             }
             else{
               res.send({
