@@ -9,13 +9,13 @@ const  db = require('../conn/conn');
             var post = {
                 
 
-                "fullname": req.body.fullname, 
+                "firstname": req.body.firstname, 
+                "lastname": req.body.lastname,
                 "email": req.body.email,
-                "mobileno": req.body.mobileno, 
-                "specialization": req.body.specialization,
-                "idno": req.body.idno, 
+                "idno": req.body.idno,
                 "gender": req.body.gender, 
-                "age": req.body.age, 
+                "specialization": req.body.specialization,
+                "mobileno": req.body.mobileno,  
                 "proglanguages":  req.body.proglanguages
 
         
