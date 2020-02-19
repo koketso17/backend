@@ -2,7 +2,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const router = express.Router();
-const db = require('../conn/conn')
+const db = require('../conn/conn');
 
 router.get('/n',function(req,res){
 
@@ -36,7 +36,7 @@ router.get('/n',function(req,res){
           else{
             res.send({
               "code":204,
-              "success":" does not exits"
+              "success":"Username does not exist"
                 });
           }
         }

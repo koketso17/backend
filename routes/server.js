@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 let jwt = require('jsonwebtoken');
 let config = require('./config');
 let middleware = require('./middleware');
+const db = require('../conn/conn');
 
 class HandlerGenerator {
     login (req, res) {
