@@ -35,7 +35,7 @@ const  db = require('../conn/conn');
                     res.send({
                         data : err,
                         code : 400,
-                        message : "Account already exists!!!"
+                        message : "Already applied..."
                     }); 
                 }else{
                     var email = req.body.email
