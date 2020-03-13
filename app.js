@@ -29,6 +29,7 @@ app.use(function (req, res, next) {
  app.use('/', require('./routes/appl_login'));
  app.use('/', require('./routes/admin_login'));
  app.use('/', require('./routes/contact_us'));
+ app.use('/', require('./routes/report'));
 
 // start server
 const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 5000;
